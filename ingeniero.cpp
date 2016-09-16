@@ -11,6 +11,24 @@ Ingeniero::~Ingeniero(){
 }
 string Ingeniero::toString()const{
 	stringstream ss;
-	ss << "Nombre: " << nombre << "Edad: " << edad << "Identidad: " << identidad;
+	ss << "Nombre: " << nombre << " Edad: " << edad << " Identidad: " << identidad;
 	return ss.str();
+}
+string Ingeniero::getNombre()const{
+	return nombre;	
+}
+int Ingeniero::getEdad()const{
+	return edad;	
+}
+string Ingeniero::getIdentidad()const{
+	return identidad;	
+}
+void Ingeniero::setNombre(string nombre){
+	this->nombre = nombre;	
+}
+void Ingeniero::setEdad(int edad){
+	this->edad = edad;	
+}
+void Ingeniero::setIdentidad(string identidad){
+	this->identidad = identidad;	
 }

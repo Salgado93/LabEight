@@ -11,7 +11,11 @@ class Ingeniero{
 	virtual ~Ingeniero(); 
  	virtual string toString()const;
 	virtual double ingresos()const = 0;
-
-
+	virtual string getNombre()const;
+	virtual int getEdad()const;
+	virtual string getIdentidad()const;
+	void setNombre(string);
+	void setEdad(int);
+	void setIdentidad(string);
 
 };

@@ -9,4 +9,6 @@ class Electronico : public Ingeniero{
 	virtual  ~Electronico();
 	virtual double ingresos()const;
 	virtual string toString()const;
+	void setTarifa(double);
+	void setDias(int);
 };

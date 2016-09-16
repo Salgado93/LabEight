@@ -5,11 +5,12 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-
+#include <typeinfo>
 
 using namespace std;
 int menu();
 int menuIngenieros();
+
 
 int main(int argc, char* argv[]){
 	int opcion = 0;
@@ -29,17 +30,45 @@ int main(int argc, char* argv[]){
 					cin >> edad;
 					cout << "Ingrese Identidad: " << endl;
 					cin >> identidad;
-					cout << "Ingrese Salario Mensual $; " << endl;
+					cout << "Ingrese Salario Mensual $: " << endl;
 					cin >> salarioM;
 					listaIngenieros.push_back(new Aerodinamico(nombre,edad,identidad,salarioM));
 					cout << "AGREGADO!" << endl;
-					
 				}
 				if(op == 2){
-
+					string nombre,identidad,especializacion;
+					int edad;
+					double salarioQ;
+					cout << "Ingrese Nombre: " << endl;
+					cin >> nombre;
+					cout << "Ingrese Edad: " << endl;
+					cin >> edad;
+					cout << "Ingrese Identidad: " << endl;
+					cin >> identidad;
+					cout << "Ingrese Especializacion: " << endl;
+					cin >> especializacion;
+					cout << "Ingrese Salario Quincenal $: " << endl;
+					cin >> salarioQ;
+					listaIngenieros.push_back(new Mecanico(nombre,edad,identidad,especializacion,salarioQ));
+					cout << "AGREGADO!" << endl;
 				}
 				if(op == 3){
-
+					string nombre,identidad;
+					int edad;
+					double tarifa;
+					int dias;
+					cout << "Ingrese Nombre: " << endl;
+					cin >> nombre;
+					cout << "Ingrese Edad: " << endl;
+					cin >> edad;
+					cout << "Ingrese Identidad: " << endl;
+					cin >> identidad;
+					cout << "Ingrese Tarifa Diaria $: " << endl;
+					cin >> tarifa;
+					cout << "Ingrese Dias Laborales: " << endl;
+					cin >> dias;
+					listaIngenieros.push_back(new Electronico(nombre,edad,identidad,tarifa,dias));
+					cout << "AGREGADO!" << endl;
 				}
 			}			
 		}
@@ -47,13 +76,90 @@ int main(int argc, char* argv[]){
 			int op = 0;
 			while ((op = menuIngenieros()) != 4){
 				if (op == 1){
-
+					int pos;
+					for (int i=0; i<listaIngenieros.size(); i++){
+						if(Aerodinamico *a = dynamic_cast<Aerodinamico*>(listaIngenieros[i])){
+                                        		cout << i << " " << listaIngenieros[i]->toString() << endl;
+						}
+                       			}
+					cout << "Ingrese La Posicion A Modificar: " << endl;
+					cin >> pos;
+					string nombre,identidad;
+					int edad; 
+					double salarioM;
+					cout << "Ingrese Nombre: " << endl;
+					cin >> nombre;
+					cout << "Ingrese Edad: " << endl;
+					cin >> edad;
+					cout << "Ingrese Identidad: " << endl;
+					cin >> identidad;
+					cout << "Ingrese Salario Mensual $: " << endl;
+					cin >> salarioM;
+					listaIngenieros[pos]->setNombre(nombre);
+					listaIngenieros[pos]->setEdad(edad);
+					listaIngenieros[pos]->setIdentidad(identidad);
+					dynamic_cast<Aerodinamico*>(listaIngenieros[pos])->setSalarioM(salarioM);
+					cout << "MODIFICADO!" << endl;
 				}
 				if(op == 2){
-
+					int pos;
+					for (int i=0; i<listaIngenieros.size(); i++){
+						if(Mecanico *m = dynamic_cast<Mecanico*>(listaIngenieros[i])){
+                                        		cout << i << " " << listaIngenieros[i]->toString() << endl;
+						}
+                       			}
+					cout << "Ingrese La Posicion A Modificar: " << endl;
+					cin >> pos;
+					string nombre,identidad;
+					int edad; 
+					string especializacion;
+					double salarioQ;
+					cout << "Ingrese Nombre: " << endl;
+					cin >> nombre;
+					cout << "Ingrese Edad: " << endl;
+					cin >> edad;
+					cout << "Ingrese Identidad: " << endl;
+					cin >> identidad;
+					cout << "Ingrese Especializacion: " << endl;
+					cin >> especializacion;
+					cout << "Ingrese Salario Quincenal$: " << endl;
+					cin >> salarioQ;
+					listaIngenieros[pos]->setNombre(nombre);
+					listaIngenieros[pos]->setEdad(edad);
+					listaIngenieros[pos]->setIdentidad(identidad);
+					dynamic_cast<Mecanico*>(listaIngenieros[pos])->setEspecializacion(especializacion);
+					dynamic_cast<Mecanico*>(listaIngenieros[pos])->setSalarioQ(salarioQ);
+					cout << "MODIFICADO!" << endl;
 				}
 				if(op == 3){
-
+					int pos;
+					for (int i=0; i<listaIngenieros.size(); i++){
+						if(Electronico *e = dynamic_cast<Electronico*>(listaIngenieros[i])){
+                                        		cout << i << " " << listaIngenieros[i]->toString() << endl;
+						}
+                       			}
+					cout << "Ingrese La Posicion A Modificar: " << endl;
+					cin >> pos;
+					string nombre,identidad;
+					int edad; 
+					double tarifa;
+					int dias;
+					cout << "Ingrese Nombre: " << endl;
+					cin >> nombre;
+					cout << "Ingrese Edad: " << endl;
+					cin >> edad;
+					cout << "Ingrese Identidad: " << endl;
+					cin >> identidad;
+					cout << "Ingrese Tarifa Diaria $: " << endl;
+					cin >> tarifa;
+					cout << "Ingrese Dias Laborales: " << endl;
+					cin >> dias;
+					listaIngenieros[pos]->setNombre(nombre);
+					listaIngenieros[pos]->setEdad(edad);
+					listaIngenieros[pos]->setIdentidad(identidad);
+					dynamic_cast<Electronico*>(listaIngenieros[pos])->setTarifa(tarifa);
+					dynamic_cast<Electronico*>(listaIngenieros[pos])->setDias(dias);
+					cout << "MODIFICADO!" << endl;
 				}
 			}
 		}
@@ -82,3 +188,4 @@ int menuIngenieros(){
 	cin >> retVal;
 	return retVal;
 }
+

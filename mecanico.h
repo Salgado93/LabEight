@@ -10,4 +10,6 @@ class Mecanico : public Ingeniero{
 	virtual  ~Mecanico();
 	virtual double ingresos()const;
 	virtual string toString()const;
+	void setEspecializacion(string);
+	void setSalarioQ(double);
 };

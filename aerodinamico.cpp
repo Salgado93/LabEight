@@ -17,6 +17,9 @@ double Aerodinamico::ingresos()const{
 }
 string Aerodinamico::toString()const{
 	stringstream ss;
-	ss << "Ingeniero Aerodinamico: " << Ingeniero::toString() << " Salario Mensual: " << salarioM;
+	ss << "Ingeniero Aerodinamico " << Ingeniero::toString() << " Salario Mensual: " << salarioM;
 	return ss.str();
+}
+void Aerodinamico::setSalarioM(double salarioM){
+	this->salarioM = salarioM;
 }

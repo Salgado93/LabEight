@@ -9,4 +9,5 @@ class Aerodinamico : public Ingeniero{
 	virtual  ~Aerodinamico();
 	virtual double ingresos()const;
 	virtual string toString()const;
+	void setSalarioM(double);
 };

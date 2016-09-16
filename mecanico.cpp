@@ -20,3 +20,9 @@ string Mecanico::toString()const{
 	ss << "Ingeniero Mecanico: " << Ingeniero::toString() << " Especializacion: " << especializacion << " Salario Quincenal: " << salarioQ;
 	return ss.str();
 }
+void Mecanico::setSalarioQ(double salarioQ){
+	this->salarioQ= salarioQ;
+}
+void Mecanico::setEspecializacion(string especializacion){
+	this->especializacion= especializacion;
+}

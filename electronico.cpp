@@ -17,3 +17,9 @@ string Electronico::toString()const{
 	ss << "Ingeniero Mecanico: " << Ingeniero::toString() << " Tarifa Por Dia: " << tarifa << " Dias Laborales: " << dias;
 	return ss.str();
 }
+void Electronico::setTarifa(double tarifa){
+	this->tarifa = tarifa;
+}
+void Electronico::setDias(int dias){
+	this->dias = dias;
+}
