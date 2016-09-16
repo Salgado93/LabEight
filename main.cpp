@@ -198,6 +198,7 @@ int main(int argc, char* argv[]){
 
 int menu(){
 	int retVal = 0;
+	cout << "          Menu          " << endl;
 	cout << "1. Agregar Ingenieros   " << endl;
 	cout << "2. Modificar Ingenieros " << endl;
 	cout << "3. Eliminar Ingenieros  " << endl;
