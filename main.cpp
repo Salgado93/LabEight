@@ -163,7 +163,35 @@ int main(int argc, char* argv[]){
 				}
 			}
 		}
+		if(opcion == 3){
+			int pos;
+			for (int i=0; i<listaIngenieros.size(); i++){
+					cout << i << " " << listaIngenieros[i]->toString() << endl;
+
+                        }
+			cout << "Ingrese La Posicion A Borrar: " << endl;
+			cin >> pos;
+			listaIngenieros.erase(listaIngenieros.begin()+pos);
+			cout << "ELIMINADO" << endl;
+		}
+		if(opcion == 4){
+			int pos;
+			for (int i=0; i<listaIngenieros.size(); i++){
+					cout << i << " " << listaIngenieros[i]->toString() << endl;
+
+                        }
+		}
+		if(opcion == 5){
+			int pos;
+			for (int i=0; i<listaIngenieros.size(); i++){
+					cout << i << " " << listaIngenieros[i]->getNombre() << " Ingresos: "  << listaIngenieros[i]->ingresos() << "$" << endl;
+
+                        }
+		}		
 		
+	}
+	for (int i=0; i<listaIngenieros.size(); i++){
+		delete listaIngenieros[i];
 	}
 	return 0;
 }
@@ -184,7 +212,7 @@ int menuIngenieros(){
 	cout << "1. Aerodinamico  " << endl;
 	cout << "2. Mecanico      " << endl;
 	cout << "3. Electronico   " << endl;
-	cout << "4. Salir         " << endl;
+	cout << "4. Regresar      " << endl;
 	cin >> retVal;
 	return retVal;
 }

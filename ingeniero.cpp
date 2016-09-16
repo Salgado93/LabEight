@@ -8,6 +8,7 @@ using std::stringstream;
 Ingeniero::Ingeniero(string nombre,int edad,string identidad):nombre(nombre),edad(edad),identidad(identidad){
 }
 Ingeniero::~Ingeniero(){
+	cout << "Destructor Ingeniero: " << this << endl;
 }
 string Ingeniero::toString()const{
 	stringstream ss;

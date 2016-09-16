@@ -17,7 +17,7 @@ double Mecanico::ingresos()const{
 }
 string Mecanico::toString()const{
 	stringstream ss;
-	ss << "Ingeniero Mecanico: " << Ingeniero::toString() << " Especializacion: " << especializacion << " Salario Quincenal: " << salarioQ;
+	ss << "Ingeniero Mecanico " << Ingeniero::toString() << " Especializacion: " << especializacion << " Salario Quincenal $: " << salarioQ;
 	return ss.str();
 }
 void Mecanico::setSalarioQ(double salarioQ){

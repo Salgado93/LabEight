@@ -14,7 +14,7 @@ double Electronico::ingresos()const{
 }
 string Electronico::toString()const{
 	stringstream ss;
-	ss << "Ingeniero Mecanico: " << Ingeniero::toString() << " Tarifa Por Dia: " << tarifa << " Dias Laborales: " << dias;
+	ss << "Ingeniero Electronico " << Ingeniero::toString() << " Tarifa Por Dia $: " << tarifa << " Dias Laborales: " << dias;
 	return ss.str();
 }
 void Electronico::setTarifa(double tarifa){
