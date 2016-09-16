@@ -13,6 +13,8 @@ int menuIngenieros();
 
 int main(int argc, char* argv[]){
 	int opcion = 0;
+	vector <Ingeniero*>listaIngenieros;
+
 	while((opcion = menu()) != 6){
 		if(opcion == 1){
 			int op = 0;
@@ -29,7 +31,9 @@ int main(int argc, char* argv[]){
 					cin >> identidad;
 					cout << "Ingrese Salario Mensual $; " << endl;
 					cin >> salarioM;
+					listaIngenieros.push_back(new Aerodinamico(nombre,edad,identidad,salarioM));
 					cout << "AGREGADO!" << endl;
+					
 				}
 				if(op == 2){
 
